@@ -1,0 +1,11 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A pie chart showing the distribution of AQI categories",
+    "data": {"url": "data_selected.csv"},
+    "mark": "arc",
+    "encoding": {
+      "theta": {"aggregate": "count", "field": "AQI Category", "type": "quantitative"},
+      "color": {"field": "AQI Category", "type": "nominal"}
+    }
+  }
+  

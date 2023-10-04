@@ -1,0 +1,13 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A stacked bar chart of AQI categories per pollutant in selected cities",
+    "data": {"url": "data_selected.csv"},
+    "mark": "bar",
+    "encoding": {
+      "x": {"field": "City", "type": "nominal"},
+      "y": {"aggregate": "count", "field": "AQI Category", "type": "quantitative"},
+      "color": {"field": "AQI Category", "type": "nominal"},
+      "column": {"field": "Pollutant", "type": "nominal"}
+    }
+  }
+  

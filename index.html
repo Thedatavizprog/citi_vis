@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Quality Visualization</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css">
+    <style>
+        .description {
+            font-size: 1.2em;
+            color: #555;
+        }
+        section h2 {
+            color: #333;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+        }
+        .visualization {
+            width: 80%;
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Air Quality Visualization</h1>
+    <p class="description">Explore the variations in AQI and specific pollutants across different cities.</p>
+
+    <!-- Map Visualization -->
+    <section>
+        <h2>Map Visualization</h2>
+        <div id="map"></div>
+    </section>
+    
+    <!-- Bar Chart Visualization -->
+    <section>
+        <h2>CO AQI Bar Chart</h2>
+        <div id="bar-chart"></div>
+    </section>
+
+    <!-- Pie Chart Visualization -->
+    <section>
+        <h2>AQI Category Distribution</h2>
+        <div id="pie-chart"></div>
+    </section>
+
+    <!-- Histogram Visualization -->
+    <section>
+        <h2>AQI Value Distribution</h2>
+        <div id="histogram"></div>
+    </section>
+
+    <!-- Stacked Bar Chart Visualization -->
+    <section>
+        <h2>Pollutant AQI Categories per City</h2>
+        <div id="stacked-bar-chart"></div>
+    </section>
+
+    <!-- Storytelling Section -->
+    <section>
+        <h2>Exploring Air Quality Across Cities</h2>
+        <p>
+            Embark on a journey through the vast landscapes of <strong>Australia</strong> and the vibrant cities of <strong>Malaysia</strong>,
+            exploring the invisible yet crucial aspect that sustains life – <strong>air quality</strong>.<br><br>
+            
+            In the land down under, most cities bask under the ‘Good’ air quality, with the breezy coasts and expansive outbacks of
+            <strong>83 cities</strong>, including <strong>Geraldton</strong>, providing a breath of fresh air. However, amidst this, some cities like
+            <strong>Palmerston</strong> lurk into the shadows of particulate matter, presenting an AQI that reaches a staggering <strong>264</strong>,
+            the highest among all observed cities.<br><br>
+            
+            Transitioning to the tropical and bustling milieu of Malaysia, the story takes a different turn. Cities such as <strong>Miri</strong> and
+            <strong>Pasir Gudang</strong> grapple with pollutants like <strong>CO</strong>, <strong>Ozone</strong>, and <strong>NO2</strong>,
+            reaching AQI values of <strong>67</strong>, <strong>209</strong>, and <strong>21</strong> respectively, posing potential threats
+            to health and environment.<br><br>
+            
+            The picturesque settings of <strong>Wangaratta, Australia</strong>, provide not only scenic views but also some of the cleanest airs,
+            with the lowest overall AQI. Yet, the narrative isn’t solely about the extremes but also about the collective measures, challenges,
+            and steps that every city, whether in Australia or Malaysia, undertakes to tread on the path of sustainable and clean air.<br><br>
+            
+            As you delve into the visualizations, explore the varied spectrum of AQI values and categories, and ponder upon the intricate balance
+            between urbanization and maintaining air quality. Notice the subtle and sometimes stark contrasts between different cities and pollutants,
+            and immerse yourself in the narrative that intertwines data with the very air we breathe.<br><br>
+            
+            This journey through air quality across cities is not just data; it’s a reflection, an exploration, and perhaps, a call to conscious,
+            sustainable living, where every breath counts, and every city strives towards clearer skies and cleaner air.
+        </p>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <script>
+        vegaEmbed('#map', 'map.json').catch(console.error);
+        vegaEmbed('#bar-chart', 'bar.json').catch(console.error);
+        vegaEmbed('#pie-chart', 'pie.json').catch(console.error);
+        vegaEmbed('#histogram', 'hist.json').catch(console.error);
+        vegaEmbed('#stacked-bar-chart', 'stacked.json').catch(console.error);
+    </script>
+</body>
+
+</html>
